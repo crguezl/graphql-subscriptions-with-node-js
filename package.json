@@ -1,0 +1,13 @@
+{
+  "name": "graphql-sub",
+  "version": "1.0.0",
+  "description": "Author: Deepak Gupta.  2020",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Casiano Rodriguez Leon <crguezl@ull.edu.es> (https://crguezl.github.io/)",
+  "license": "ISC"
+}
