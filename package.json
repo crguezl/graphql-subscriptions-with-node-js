@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "Casiano Rodriguez Leon <crguezl@ull.edu.es> (https://crguezl.github.io/)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "graphql-yoga": "^1.18.3"
+  }
 }

@@ -1,5 +1,6 @@
+const fs = require('fs')
 const { GraphQLServer, PubSub } = require('graphql-yoga');
-const typeDefs = require('./typeDefs');
+const typeDefs = fs.readFileSync('./typeDefs.gql', 'utf8')
 const resolvers = require('./resolvers');
 const pubsub = new PubSub()
 const server  = new GraphQLServer({

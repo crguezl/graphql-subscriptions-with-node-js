@@ -1,6 +1,4 @@
-//type definitions and schemas - (operation and data structure)
-const typeDefs = `
-    type Query {
+  type Query {
         getPosts: [Post!]!
         getPost(query: String!): [Post]
     }
@@ -54,5 +52,3 @@ const typeDefs = `
         mutation: String
         data: Post
     }
-`;
-module.exports = typeDefs;
