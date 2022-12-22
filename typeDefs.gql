@@ -1,54 +1,60 @@
-  type Query {
-        getPosts: [Post!]!
-        getPost(query: String!): [Post]
-    }
+type Query {
+  getPosts: [Post!]!
+  getPost(query: String!): [Post]
+}
 
-    type Post{
-        id:ID
-        title:String
-        subtitle:String
-        body:String
-        published:Boolean
-        author: String
-        upvotes: Int
-        downvotes: Int
-        commentCount: Int
-    }
+type Post{
+  id:ID
+  title:String
+  subtitle:String
+  body:String
+  published:Boolean
+  author: String
+  upvotes: Int
+  downvotes: Int
+  commentCount: Int
+}
 
-    type Mutation{
+enum Crud {
+  CREATE
+  UPDATE
+  DELETE
+}
 
-        updatePost(
-          id:ID!
-          title:String!
-          subtitle:String
-          body:String!
-          published:Boolean
-          author: String!
-          upvotes: Int
-          downvotes: Int
-          commentCount: Int
-        ): Post!
-        
-        deletePost(id: ID!): Post!
-        
-        createPost(
-          id:ID!
-          title:String
-          subtitle:String
-          body:String
-          published:Boolean
-          author: String!
-          upvotes: Int
-          downvotes: Int
-          commentCount: Int
-        ): Post!
-    }
+type Mutation{
 
-    type Subscription {
-        post: SubscriptionPayload
-    }
-    
-    type SubscriptionPayload {
-        mutation: String
-        data: Post
-    }
+  updatePost(
+    id:ID!
+    title:String!
+    subtitle:String
+    body:String!
+    published:Boolean
+    author: String!
+    upvotes: Int
+    downvotes: Int
+    commentCount: Int
+  ): Post!
+  
+  deletePost(id: ID!): Post!
+  
+  createPost(
+    id:ID!
+    title:String
+    subtitle:String
+    body:String
+    published:Boolean
+    author: String!
+    upvotes: Int
+    downvotes: Int
+    commentCount: Int
+  ): Post!
+}
+
+type Subscription {
+  post: SubscriptionPayload
+}
+
+type SubscriptionPayload {
+  mutation: Crud
+  data: Post
+}

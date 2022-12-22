@@ -11,7 +11,7 @@ const server  = new GraphQLServer({
   }
 })
 const options = {
-  port: 3000
+  port: 3001
 };
 server.start(options, ({ port }) => {
   console.log(
